@@ -180,7 +180,9 @@
 
 - (void)setupPlaceholderView
 {
-    _placeholderView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"placeholder"]];
+    UIImage *image = [UIImage imageNamed:@"PaymentKitResources.bundle/placeholder.png"];
+    
+    _placeholderView = [[UIImageView alloc] initWithImage:image];
 	_placeholderView.backgroundColor = [UIColor whiteColor];
 }
 
