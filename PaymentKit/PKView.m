@@ -11,6 +11,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "PKView.h"
 #import "PKTextField.h"
+#import "PKResourceLoader.h"
 
 @interface PKView () <UITextFieldDelegate> {
 	
@@ -180,11 +181,7 @@
 
 - (void)setupPlaceholderView
 {
- 
-    NSString *bundlePath = [[NSBundle bundleForClass:[self class]] pathForResource:@"PaymentKitResources" ofType:@"bundle"];
-    NSBundle *projectBundle = [NSBundle bundleWithPath:bundlePath];
-    UIImage *image = [UIImage imageWithContentsOfFile:[projectBundle pathForResource:@"placeholder" ofType:@"png"]];
-    
+    UIImage *image = [PKResourceLoader imageWithName:@"placeholder"];
     _placeholderView = [[UIImageView alloc] initWithImage:image];
 	_placeholderView.backgroundColor = [UIColor whiteColor];
 }
@@ -465,9 +462,9 @@
     PKCardType cardType      = [cardNumber cardType];
     
     if (cardType == PKCardTypeAmex) {
-        [self setPlaceholderViewImage:[UIImage imageNamed:@"cvc-amex"]];
+        [self setPlaceholderViewImage:[PKResourceLoader imageWithName:@"cvc-amex"]];
     } else {
-        [self setPlaceholderViewImage:[UIImage imageNamed:@"cvc"]];
+        [self setPlaceholderViewImage:[PKResourceLoader imageWithName:@"cvc"]];
     }
 }
 
@@ -504,7 +501,7 @@
 		cardTypeName = [NSString stringWithFormat:@"%@-outline", cardTypeName];
 	}
 	
-    [self setPlaceholderViewImage:[UIImage imageNamed:cardTypeName]];
+    [self setPlaceholderViewImage:[PKResourceLoader imageWithName:cardTypeName]];
 }
 
 // Delegates
