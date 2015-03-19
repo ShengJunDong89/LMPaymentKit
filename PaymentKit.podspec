@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.license             = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage            = "https://stripe.com"
   s.author              = { "Alex MacCaw" => "alex@stripe.com" }
-  s.source              = { :git@github.com:ShengJunDong89/LMPaymentKit.git", :head}
+  s.source              = { :git => "https://github.com/ShengJunDong89/JLPermissions.git", :head}
   s.source_files        = 'PaymentKit/*.{h,m}'
   s.public_header_files = 'PaymentKit/*.h'
   s.ios.resource_bundle = { 'PaymentKitResources' => 'PaymentKit/Resources/Cards/*.png' }
