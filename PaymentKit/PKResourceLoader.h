@@ -15,6 +15,7 @@
 
 @interface PKResourceLoader : NSObject
 
++ (UIImage *)imageWithName:(NSString *)name extension:(NSString *)extension;
 + (UIImage *)imageWithName:(NSString *)name;
 
 @end
